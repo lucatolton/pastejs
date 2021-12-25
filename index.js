@@ -1,10 +1,11 @@
 // basic imports
+require('dotenv').config();
 const config = require('./config.json');
 const consola = require('consola');
 
 // configure database
 const mongoose = require('mongoose');
-mongoose.connect(config.database.url, {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

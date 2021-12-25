@@ -6,8 +6,9 @@ This application can be setup with 3 simple steps.
 
 ### Step One: Configure the configuration file
 For this, you're going to need an open port on your system, a MongoDB database and an Auth0 account.<br>
-Fill in the details in the **config.example.json** file, they're pretty self explanatory.
-Once you've filled it in, rename the file to **config.json**
+Fill in the details in the **config.example.json** file, they're pretty self explanatory.<br>
+Once you've filled it in, rename the file to **config.json**<br><br>
+The MongoDB URL configuration should be configured as an environment variable called **MONGO_URL**. This can also be placed into a **.env** file
 
 ### Step Two: Install the packages
 You need to run one command. Think you can handle it? Give it a go now.
