@@ -1,9 +1,15 @@
 const { Schema, model } = require('mongoose');
 
 const pastesSchema = new Schema({
-    userID: {
-        type: String,
-        required: true,
+    user: {
+        id: {
+            type: String,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true,
+        },
     },
 
     title: {
@@ -14,6 +20,12 @@ const pastesSchema = new Schema({
     content: {
         type: String,
         required: true,
+    },
+
+    visibility: {
+        type: String,
+        required: true,
+        default: 'public',
     },
 
     createdAt: {

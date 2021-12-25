@@ -1,2 +1,24 @@
-<h1>Login</h1>
-<a href="/api/auth/login">Login</a>
+<%- include("../include/head.ejs", { title: 'Login' }) %>
+
+<body onload="authRedirect()">
+    <%- include("../include/header.ejs", { noUser: true }) %>
+    <main>
+        <section class="section section bg-soft pb-5 overflow-hidden z-2">
+            <div class="container">
+                <!-- Title -->
+                <div class="row">
+                    <div class="col text-center">
+                        <h2 class="h5 mb-6">Login</h2>
+                    </div>
+                </div>
+                <!-- End of title-->
+                <div class="row mb-5" id="recent_pastes">
+                    You will be redirected, please wait
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include("../include/footer.ejs") %>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<%- include("../include/head.ejs", { title: paste.title }) %>
+
+<body>
+    <%- include("../include/header.ejs") %>
+    <main>
+        <!-- Section -->
+        <section class="section section-lg">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-12 col-lg-12 mb-5">
+                        <!-- Contact Card -->
+                        <div class="card bg-primary shadow-soft border-light p-2 p-md-3 p-lg-5">
+                            <h2><%= paste.title %></h2> 
+                            <pre><%= paste.content %></pre>
+
+                            <p class="font-weight-normal font-small mb-0">Posted by <%= paste.user.name %> on <%= paste.createdAt %></p><br />
+
+                            <%
+                                if (user && paste.user.id === user.sub.slice(6)) {
+                            %>
+                            <div class="col-lg-12">
+                                <a class="btn btn-primary" onclick="deletePaste('<%= paste._id %>')">Delete Paste</a>
+                            </div>
+                            <%
+                                }
+                            %>
+                        </div>
+                        <!-- End of Contact Card -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of section -->
+    </main>
+    <%- include("../include/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<%- include("../include/head.ejs", { title: 'New Paste' }) %>
+
+<body>
+    <%- include("../include/header.ejs") %>
+    <main>
+        <!-- Section -->
+        <section class="section section-lg">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-12 col-lg-12 mb-5">
+                        <!-- Contact Card -->
+                        <div class="card bg-primary shadow-soft border-light p-2 p-md-3 p-lg-5">
+                            <form class="col-12 col-md-8 mx-auto" id="paste_form">
+                                <!-- Form -->
+                                <div class="form-group">
+                                    <label for="paste_title">Paste Title</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><span class="fa fa-heading"></span></span>
+                                        </div>
+                                        <input class="form-control" id="paste_title" placeholder="e.g. console log the best pastebin alternative" type="text">
+                                    </div>
+                                </div>
+                                <!-- Form -->
+                                <div class="form-group">
+                                    <label for="paste_content">Paste Contents</label>
+                                    <textarea class="form-control" placeholder="console.log('pastejs');" id="paste_content" rows="15"></textarea>
+                                </div>
+                            </form>
+                            <div class="card-footer px-0 mx-auto">
+                                <button type="button" class="btn btn-success" onclick="createPaste('public')">Create Public</button>
+                                <button type="button" class="btn btn-info" onclick="createPaste('unlisted')">Create Unlisted</button>
+                                <button type="button" class="btn btn-danger" onclick="createPaste('private')">Create Private</button>
+                            </div>
+                        </div>
+                        <!-- End of Contact Card -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of section -->
+    </main>
+    <%- include("../include/footer.ejs") %>
+</body>
+</html>

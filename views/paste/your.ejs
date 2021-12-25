@@ -1,24 +1,24 @@
-<%- include("include/head.ejs", { title: 'Home' }) %>
+<%- include("../include/head.ejs", { title: 'Your Pastes' }) %>
 
-<body onload="getRecentPastes()">
-    <%- include("include/header.ejs") %>
+<body onload="getOwnPastes('<%= user.id %>')">
+    <%- include("../include/header.ejs") %>
     <main>
         <section class="section section bg-soft pb-5 overflow-hidden z-2">
             <div class="container">
                 <!-- Title -->
                 <div class="row">
                     <div class="col text-center">
-                        <h2 class="h5 mb-6">Public Pastes</h2>
+                        <h2 class="h5 mb-6">Your Pastes</h2>
                     </div>
                 </div>
                 <!-- End of title-->
-                <div class="row mb-5" id="recent_pastes">
+                <div class="row mb-5" id="own_pastes">
                     Loading...
                 </div>
             </div>
         </section>
     </main>
-    <%- include("include/footer.ejs") %>
+    <%- include("../include/footer.ejs") %>
 </body>
 
 </html>
