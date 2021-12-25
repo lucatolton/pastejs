@@ -16,6 +16,9 @@ function createPaste(visibility) {
     if (!title || title.length === 0) return;
     if (!content || content.length === 0) return;
 
+    if (title.length > 32) return alert('Title must be 32 characters or less');
+    if (content.length > 1024) return alert('Content must be 1024 characters or less');
+
     console.log('making paste');
     
     $.ajax({

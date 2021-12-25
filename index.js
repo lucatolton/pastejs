@@ -126,7 +126,7 @@ app.get('/api/pastes/currentuser', authRedirect, (req, res) => {
         id: req.oidc.user.sub.slice(6),
         name: req.oidc.user.nickname,
     }
-    pasteModel.find({ user: usersearch}, (err, pastes) => {
+    pasteModel.find({ user: usersearch }, (err, pastes) => {
         res.json(pastes.reverse());
     });
 });
@@ -150,8 +150,13 @@ app.post('/api/pastes', authRedirect, (req, res) => {
     res.send(paste);
 });
 app.delete('/api/pastes/:id', authRedirect, (req, res) => {
-    pasteModel.findByIdAndDelete(req.params.id, (err, paste) => {
-        res.send(paste);
+    pasteModel.findById(req.params.id, (err, paste) => {
+        if (paste.user.id === req.oidc.user.sub.slice(6)) {
+            paste.remove();
+            res.send(paste);
+        } else {
+            res.send(401);
+        }
     });
 });
 app.get('/api/version', (req, res) => res.send({ version: config.ver }));
