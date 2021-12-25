@@ -6,13 +6,13 @@
     },
 
     "database": {
-        "url": "mongodb+srv://testboy:tomJERRY9@cluster0.c0qsx.mongodb.net/pastejs"
+        "url": "MongoDB URL"
     },
 
     "auth": {
-        "baseURL": "https://paste.lucatolton.me",
-        "clientID": "3CwfdV9RxuvnvEbd63UlR9e3scJpSoGw",
-        "issuerBaseURL": "https://lucatolton.us.auth0.com",
-        "secret": "super secure secret"
+        "baseURL": "URL of paste server",
+        "clientID": "Auth0 client ID",
+        "issuerBaseURL": "Auth0 base URL",
+        "secret": "Randomly generated secret"
     }
 }
