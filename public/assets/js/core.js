@@ -135,3 +135,8 @@ function timeSince(timeStamp) {
 function authRedirect() {
     window.location.href = '/api/auth/login';
 }
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+    alert('Copied to clipboard');
+}
