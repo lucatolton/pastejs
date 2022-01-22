@@ -16,7 +16,7 @@
                             <p class="font-weight-normal font-small mb-0">Posted by <%= paste.user.name %> on <%= paste.createdAt %></p><br />
 
                             <div class="col-lg-12">
-                                <a class="btn btn-primary" onclick="copyToClipboard('<%= paste.content %>')">Copy Content</a>
+                                <a class="btn btn-primary" onclick="copyToClipboard('<%= paste.content %>')"><span id="clipboard-copy-action">Copy Content</span> <span id="clipboard-copy-done">Copied Content</span></a>
                             <%
                                 if (user && paste.user.id === user.sub.slice(6)) {
                             %>

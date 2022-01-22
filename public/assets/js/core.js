@@ -137,6 +137,15 @@ function authRedirect() {
 }
 
 function copyToClipboard(text) {
+    let action = document.getElementById('clipboard-copy-action');
+    let complete = document.getElementById('clipboard-copy-done');
+
     navigator.clipboard.writeText(text);
-    alert('Copied to clipboard');
+
+    action.style.hidden = true;
+    complete.style.hidden = false;
+    setTimeout(() => {
+        action.style.hidden = false;
+        complete.style.hidden = true;
+    }, 1000);
 }
